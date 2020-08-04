@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 namespace LatihanApi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -30,7 +30,7 @@ namespace LatihanApi.Controllers
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
+                TemperatureC = rng.Next(-0, 1),
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
